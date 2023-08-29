@@ -1,0 +1,49 @@
+COL 333 Assignment 3 Report 
+Probabilistic Reasoning
+
+Dhananjay Sapawat (2019CS10345)
+Pratik Nimbalkar (2020CS10607)
+
+
+Problem Description:
+
+We use probabilistic reasoning to estimate the belief over positions of given cars using noisy observations acquired over time. We consider the example of an intelligent road vehicle equipped with a (noisy) sensor that needs to locate other vehicles in order to plan a safe path to its goal. 
+
+Our Implementation:
+Part A:
+
+We have implemented the estimator function that estimates the distribution of probability i.e. belief on StdCars locations using the evidences i.e. z0, z1, z2,....zt given over a time. Mathematically the belief is given by Probability of location of StdCar (xt) given noisy observations (evidences) [z0, z1, …..zt] for each car. 
+We have based our implementation on the concept of particle filtering. 
+
+Class Estimator:
+
+This estimator class will maintain and update a belief distribution over the probability of a car. 
+
+We have defined several functions in this class:
+
+1. GiveRandom funtion:
+This function will select any element uniformly over different weights when given a dictionary as (element -> weight).
+
+2. Estimate function:
+This function will estimate (reweight the particles based on an observation). It Takes self.belief as input and updates it considering the observation or estimation of the distance of the StdCars. Hence we use this function to resample the particles.
+Here x and y are location coordinates of your car.
+We create new required resampled particles obtained after filtering of particles. 
+
+3. getBelief function:
+Returns the belief of the probability that the car is in each tile. The belief probabilities would sum up to one. 
+
+Results:
+We get our estimator to get the belief of position of given StdCars. Our car will now cross the obstacles without getting crashed with StdCars and reach the destination. 
+
+
+
+
+
+
+
+
+
+
+
+
+
